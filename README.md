@@ -14,5 +14,5 @@ Mars Rover is an example of a nice Kata to be implemented with TDD style
 - [x] Example: The rover is on a 100x100 grid at location (0, 0) and facing NORTH. The rover is given the commands "ffrff" and should end up at (2, 2).
 
 ###Solution
-I've worked on this while studying TDD with Golang, since I've started a course on[Pluralsight](https://app.pluralsight.com/library/courses/go-testing-applications/table-of-contents)
+I've worked on this while studying TDD with Golang, since I've started a course on [Pluralsight](https://app.pluralsight.com/library/courses/go-testing-applications/table-of-contents)
 The solution is not meant to be complete but just a starting point for me :-)
