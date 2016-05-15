@@ -1,4 +1,4 @@
-package mars_rover
+package marsrover
 
 import "testing"
 
@@ -8,26 +8,26 @@ func TestCommandRoverFFRFF(t *testing.T) {
 	expectedX := 2
 	expectedY := 2
 	expectedDirection := "E"
-	InitGrid(99, 99)
-	rover := RoverSetup()
+	initGrid(99, 99)
+	rover := roverSetup()
 
 	//When
-	CommandRover(rover, "ffrff")
+	commandRover(rover, "ffrff")
 
 	//Then
-	actualX := rover.GetX()
+	actualX := rover.getX()
 
 	if actualX != expectedX {
 		t.Errorf("[X] Expected %d, actual %d", expectedX, actualX)
 	}
 
-	actualY := rover.GetY()
+	actualY := rover.getY()
 
 	if actualY != expectedY {
 		t.Errorf("[Y] Expected %d, actual %d", expectedY, actualY)
 	}
 
-	actualDirection := rover.GetDirection()
+	actualDirection := rover.getDirection()
 
 	if actualDirection != expectedDirection {
 		t.Errorf("[Direction] Expected %s, actual %s", expectedDirection, actualDirection)
@@ -40,26 +40,26 @@ func TestCommandRoverBBLBB(t *testing.T) {
 	expectedX := 2
 	expectedY := 98
 	expectedDirection := "W"
-	InitGrid(99, 99)
-	rover := RoverSetup()
+	initGrid(99, 99)
+	rover := roverSetup()
 
 	//When
-	CommandRover(rover, "bblbb")
+	commandRover(rover, "bblbb")
 
 	//Then
-	actualX := rover.GetX()
+	actualX := rover.getX()
 
 	if actualX != expectedX {
 		t.Errorf("[X] Expected %d, actual %d", expectedX, actualX)
 	}
 
-	actualY := rover.GetY()
+	actualY := rover.getY()
 
 	if actualY != expectedY {
 		t.Errorf("[Y] Expected %d, actual %d", expectedY, actualY)
 	}
 
-	actualDirection := rover.GetDirection()
+	actualDirection := rover.getDirection()
 
 	if actualDirection != expectedDirection {
 		t.Errorf("[Direction] Expected %s, actual %s", expectedDirection, actualDirection)

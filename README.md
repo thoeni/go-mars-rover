@@ -1,4 +1,4 @@
-###Mars Rover TDD Kata [![Build Status](https://travis-ci.org/thoeni/go-mars-rover.svg?branch=master)](https://travis-ci.org/thoeni/go-mars-rover)   [![Coverage Status](http://coveralls.io/repos/github/thoeni/go-mars-rover/badge.svg?branch=master)](https://coveralls.io/github/thoeni/go-mars-rover?branch=master)
+###Mars Rover TDD Kata  [![Go Report Card](https://goreportcard.com/badge/github.com/thoeni/go-mars-rover)](https://goreportcard.com/report/github.com/thoeni/go-mars-rover)  [![Build Status](https://travis-ci.org/thoeni/go-mars-rover.svg?branch=master)](https://travis-ci.org/thoeni/go-mars-rover)   [![Coverage Status](http://coveralls.io/repos/github/thoeni/go-mars-rover/badge.svg?branch=master)](https://coveralls.io/github/thoeni/go-mars-rover?branch=master)
 
 ###Problem:
 

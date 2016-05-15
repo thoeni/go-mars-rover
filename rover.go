@@ -1,104 +1,107 @@
-package mars_rover
+package marsrover
 
-type Rover struct {
+type rover struct {
 	x         int
 	y         int
 	direction string
 }
 
-type Grid struct {
+type gridPlanet struct {
 	xMax int
 	yMax int
 }
 
-var grid Grid
+var grid gridPlanet
 
-func RoverSetup() *Rover {
-	var rover = new(Rover)
+const n string = "N"
+const e string = "E"
+const s string = "S"
+const w string = "W"
+
+func roverSetup() *rover {
+	var rover = new(rover)
 	rover.x = 0
 	rover.y = 0
-	rover.direction = "N"
+	rover.direction = n
 	return rover
 }
 
-func InitGrid(xMax, yMax int) {
+func initGrid(xMax, yMax int) {
 	grid.xMax = xMax
 	grid.yMax = yMax
 }
 
-func (this *Rover) GetX() int {
-	return this.x
+func (rover *rover) getX() int {
+	return rover.x
 }
 
-func (this *Rover) GetY() int {
-	return this.y
+func (rover *rover) getY() int {
+	return rover.y
 }
 
-func (this *Rover) GetDirection() string {
-	return this.direction
+func (rover *rover) getDirection() string {
+	return rover.direction
 }
 
-func (this *Rover) MoveForward() {
-	switch this.GetDirection() {
-	case "N":
-		this.y = towardsNE(this.y, grid.yMax)
-	case "S":
-		this.y = towardsSW(this.y, grid.yMax)
-	case "E":
-		this.x = towardsNE(this.x, grid.xMax)
-	case "W":
-		this.x = towardsSW(this.x, grid.xMax)
+func (rover *rover) moveForward() {
+	switch rover.getDirection() {
+	case n:
+		rover.y = towardsNE(rover.y, grid.yMax)
+	case s:
+		rover.y = towardsSW(rover.y, grid.yMax)
+	case e:
+		rover.x = towardsNE(rover.x, grid.xMax)
+	case w:
+		rover.x = towardsSW(rover.x, grid.xMax)
 	}
 }
 
 func towardsNE(current, max int) int {
 	if current != max {
 		return current + 1
-	} else {
-		return 0
 	}
+	return 0
 }
 
 func towardsSW(current, max int) int {
 	if current != 0 {
 		return current - 1
-	} else {
-		return max
+	}
+	return max
+}
+
+func (rover *rover) moveBackwards() {
+	switch rover.getDirection() {
+	case n:
+		rover.y = towardsSW(rover.y, grid.yMax)
+	case s:
+		rover.y = towardsNE(rover.y, grid.yMax)
+	case e:
+		rover.x = towardsSW(rover.x, grid.xMax)
+	case w:
+		rover.x = towardsNE(rover.x, grid.xMax)
 	}
 }
 
-func (this *Rover) MoveBackwards() {
-	switch this.GetDirection() {
-	case "N":
-		this.y = towardsSW(this.y, grid.yMax)
-	case "S":
-		this.y = towardsNE(this.y, grid.yMax)
-	case "E":
-		this.x = towardsSW(this.x, grid.xMax)
-	case "W":
-		this.x = towardsNE(this.x, grid.xMax)
-	}
-}
-
-func (this *Rover) TurnRight() {
-	switch this.direction {
-	case "N":
-		this.direction = "E"
+func (rover *rover) turnRight() {
+	switch rover.direction {
+	case n:
+		rover.direction = e
 		break
-	case "E":
-		this.direction = "S"
+	case e:
+		rover.direction = s
 		break
-	case "S":
-		this.direction = "W"
+	case s:
+		rover.direction = w
 		break
-	case "W":
-		this.direction = "N"
+	case w:
+		rover.direction = n
 		break
 	}
 }
 
-func (this *Rover) TurnLeft() {
-	this.TurnRight()
-	this.TurnRight()
-	this.TurnRight()
+func (rover *rover) turnLeft() {
+	rover.turnRight()
+	rover.turnRight()
+	rover.turnRight()
 }

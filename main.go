@@ -1,21 +1,21 @@
-package mars_rover
+package marsrover
 
 import "strings"
 
-func CommandRover(rover *Rover, command string) {
+func commandRover(rover *rover, command string) {
 	for _, v := range command {
 		switch strings.ToUpper(string(v)) {
 		case "F":
-			rover.MoveForward()
+			rover.moveForward()
 			break
 		case "B":
-			rover.MoveBackwards()
+			rover.moveBackwards()
 			break
 		case "R":
-			rover.TurnRight()
+			rover.turnRight()
 			break
 		case "L":
-			rover.TurnLeft()
+			rover.turnLeft()
 			break
 		}
 	}
